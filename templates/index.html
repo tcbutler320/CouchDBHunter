@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>couchuntr</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+    .center {
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="center">
+        <h1>couch hunter</h1>
+        <br>
+        <i>target ip</i>
+        <input placeholder="178.128.130.13">
+        <br>
+        <br>
+        <form action="/enumerate" method="post">
+            <button name="forwardBtn" type="submit">enumerate</button>
+        </form>
+        <button onclick="myFunction()">clear data</button>
+    </div>
+    <p id="results">{{ Enumerate_data }}</p>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+            $(function() {
+            $('a#test').on('click', function(e) {
+                e.preventDefault()
+                $.getJSON('/enumerate',
+                    function(data) {
+                    var section = document.getElementById("results");
+                    section.innerHTML = data;
+
+                //do nothing
+                });
+                return false;
+            });
+            });
+    </script>
+    <script>
+        function myFunction(){
+            var section = document.getElementById("results");
+            section.innerHTML = "";
+            console.log("cleared");
+        }
+    </script>
+</body>
+</html>
