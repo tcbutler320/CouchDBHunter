@@ -3,52 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <title>couchuntr</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/32a2b2a489.js" crossorigin="anonymous"></script>
 </head>
 <style>
-    body {
+    html {
+        font-family: 'Ubuntu', sans-serif;
+
+    }
+    body, a{
         background-color: black;
         color: white;
+        font-family: 'Ubuntu', sans-serif;
+        text-decoration: none;
     }
     .center {
         text-align: center;
     }
+    .zoom:hover {
+        color: #950101;
+        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+    .footer {
+        position:absolute;
+        margin-left: 500px;
+        bottom: 50px;
+        font-family: 'Ubuntu', sans-serif;
+
+    }
+    .form-style-4{
+        display: inline-block;
+        width: 450px;
+        font-size: 16px;
+        padding: 30px 30px 15px 30px;
+        /* border: 5px solid #53687E; */
+    }
+    
+    .form-style-4 input[type=submit],
+    .form-style-4 input[type=button],
+    .form-style-4 input[type=text],
+    .form-style-4 input[type=email],
+    .form-style-4 textarea,
+    .form-style-4 label
+    {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 16px;
+        color: #fff;
+
+    }
+.form-style-4 label {
+	display:block;
+	margin-bottom: 10px;
+}
+.form-style-4 label > span{
+	display: inline-block;
+	float: left;
+	width: 150px;
+}
+.form-style-4 input[type=text],
+.form-style-4 input[type=email] 
+{
+	background: transparent;
+	border: none;
+	border-bottom: 1px dashed white;
+	width: 275px;
+	outline: none;
+	padding: 0px 0px 0px 0px;
+	font-style: italic;
+}
+.form-style-4 textarea{
+	font-style: italic;
+	padding: 0px 0px 0px 0px;
+	background: transparent;
+	outline: none;
+	border: none;
+	border-bottom: 1px dashed white;
+	width: 275px;
+	overflow: hidden;
+	resize:none;
+	height:20px;
+}
+
+.form-style-4 textarea:focus, 
+.form-style-4 input[type=text]:focus,
+.form-style-4 input[type=email]:focus,
+.form-style-4 input[type=email] :focus
+{
+	border-bottom: 1px dashed #D9FFA9;
+}
+
+.form-style-4 input[type=submit],
+.form-style-4 input[type=button]{
+	background: #576E86;
+	border: none;
+	padding: 8px 10px 8px 10px;
+	border-radius: 5px;
+	color: #A8BACE;
+}
+.form-style-4 input[type=submit]:hover,
+.form-style-4 input[type=button]:hover{
+background: #394D61;
+}
+.header {
+    text-align: center;
+}
+
 </style>
 <body>
+   <div class="header">
+    <a href="/">about /</a>
+    <a href="/">blog /</a>
+    <a href="/">use cases /</a>
+    <a href="/">installation</a>
+
+   </div>
     <div class="center">
-        <h1>couch hunter</h1>
+        <pre>
+            ▄████▄   ▒█████   █    ██  ▄████▄   ██░ ██ ▓█████▄  ▄▄▄▄       ██░ ██  █    ██  ███▄    █ ▄▄▄█████▓ ██▀███  
+            ▒██▀ ▀█  ▒██▒  ██▒ ██  ▓██▒▒██▀ ▀█  ▓██░ ██▒▒██▀ ██▌▓█████▄    ▓██░ ██▒ ██  ▓██▒ ██ ▀█   █ ▓  ██▒ ▓▒▓██ ▒ ██▒
+            ▒▓█    ▄ ▒██░  ██▒▓██  ▒██░▒▓█    ▄ ▒██▀▀██░░██   █▌▒██▒ ▄██   ▒██▀▀██░▓██  ▒██░▓██  ▀█ ██▒▒ ▓██░ ▒░▓██ ░▄█ ▒
+            ▒▓▓▄ ▄██▒▒██   ██░▓▓█  ░██░▒▓▓▄ ▄██▒░▓█ ░██ ░▓█▄   ▌▒██░█▀     ░▓█ ░██ ▓▓█  ░██░▓██▒  ▐▌██▒░ ▓██▓ ░ ▒██▀▀█▄  
+            ▒ ▓███▀ ░░ ████▓▒░▒▒█████▓ ▒ ▓███▀ ░░▓█▒░██▓░▒████▓ ░▓█  ▀█▓   ░▓█▒░██▓▒▒█████▓ ▒██░   ▓██░  ▒██▒ ░ ░██▓ ▒██▒
+            ░ ░▒ ▒  ░░ ▒░▒░▒░ ░▒▓▒ ▒ ▒ ░ ░▒ ▒  ░ ▒ ░░▒░▒ ▒▒▓  ▒ ░▒▓███▀▒    ▒ ░░▒░▒░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒   ▒ ░░   ░ ▒▓ ░▒▓░
+            ░  ▒     ░ ▒ ▒░ ░░▒░ ░ ░   ░  ▒    ▒ ░▒░ ░ ░ ▒  ▒ ▒░▒   ░     ▒ ░▒░ ░░░▒░ ░ ░ ░ ░░   ░ ▒░    ░      ░▒ ░ ▒░
+            ░        ░ ░ ░ ▒   ░░░ ░ ░ ░         ░  ░░ ░ ░ ░  ░  ░    ░     ░  ░░ ░ ░░░ ░ ░    ░   ░ ░   ░        ░░   ░ 
+            ░ ░          ░ ░     ░     ░ ░       ░  ░  ░   ░     ░          ░  ░  ░   ░              ░             ░     
+            ░                          ░                 ░            ░                                                  
+                                                                            a couchdb enumeration tool
+                                                                                       by Tyler Butler 
+        </pre>
+        <form class="form-style-4" id="enumerate_form" action="/enumerate" method="post">
+            <label for="target">
+            <span>target</span><input type="text"  name="target" id="target" placeholder="178.128.130.13"/>
+            </label>
+            <label for="database">
+            <span>database</span><input  type="text" name="database" id="database" placeholder="database"/>
+            </label>
+            <label for="document">
+            <span>document</span><input type="text" name="document" id="document" placeholder="document"/>
+            </label>
+            <label>
+            <span> </span>
+            <br>
+            <button onclick="document.getElementById('enumerate_form').submit();">go</button
+            <i class="zoom fa-lg fas fa-quidditch href="javascript:{}" onclick="document.getElementById('enumerate_form').submit();"></i>
+            <i class="zoom fa-lg fas fa-hand-sparkles" onclick="myFunction()"></i>
+            <i class="zoom fa-lg fas fa-database href="javascript:{}" onclick="document.getElementById('enumeratedb_form').submit();"></i>
+            </label>
+            </form>
         <br>
-        <i>target ip</i>
-        <input placeholder="178.128.130.13">
-        <br>
-        <br>
-        <form action="/enumerate" method="post">
-            <button name="forwardBtn" type="submit">enumerate</button>
-        </form>
-        <button onclick="myFunction()">clear data</button>
     </div>
-    <p id="results">{{ Enumerate_data }}</p>
+    <div class="center" style="margin-left: 200px;margin-right: 200px;font-size: 1rem;">
+        <p id="results">{{ Enumerate_data }}</p>
+        <p id="database_results">{{ database_data }}</p>
+    </div>
+    <div class="center footer">
+        <p>
+            <a href="/" class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-code-branch"></i> git</a>
+            <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-dumpster-fire"></i> changelog</a>
+            <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-dumpster-fire"></i> blog</a>
+            <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-dumpster-fire"></i> privacy</a>
+            <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-dumpster-fire"></i> about</a>
+            <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-dumpster-fire"></i> donate</a>
+        </p>
+    </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type=text/javascript>
-            $(function() {
+    <!-- <script type=text/javascript>
+            var target = document.getElementById("ip");
+            document.getElementById("debug") = target;
+            $(function(target) {
             $('a#test').on('click', function(e) {
                 e.preventDefault()
                 $.getJSON('/enumerate',
                     function(data) {
                     var section = document.getElementById("results");
                     section.innerHTML = data;
-
                 //do nothing
                 });
                 return false;
             });
             });
     </script>
+        <script type=text/javascript>
+            $(function() {
+            $('a#test').on('click', function(e) {
+                e.preventDefault()
+                $.getJSON('/enumerate_db',
+                    function(data) {
+                    var section = document.getElementById("database_results");
+                    section.innerHTML = data;
+                //do nothing
+                });
+                return false;
+            });
+            });
+    </script> -->
     <script>
         function myFunction(){
             var section = document.getElementById("results");
             section.innerHTML = "";
             console.log("cleared");
         }
+    </script>
+    <script>
+        /**
+         * sends a request to the specified url from a form. this will change the window location.
+         * @param {string} path the path to send the post request to
+         * @param {object} params the parameters to add to the url
+         * @param {string} [method=post] the method to use on the form
+         */
+
+        function post(path, params, method='post') {
+
+        // The rest of this code assumes you are not using a library.
+        // It can be made less verbose if you use one.
+        const form = document.createElement('form');
+        form.method = method;
+        form.action = path;
+
+        for (const key in params) {
+        if (params.hasOwnProperty(key)) {
+            const hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = key;
+            hiddenField.value = params[key];
+
+            form.appendChild(hiddenField);
+        }
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+        }
+
     </script>
 </body>
 </html>
