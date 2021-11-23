@@ -11,6 +11,22 @@ app = Flask(__name__)
 def hello():
     return render_template('index.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
+
+@app.route('/use-cases')
+def use():
+    return render_template('use-cases.html')
+
+@app.route('/installation')
+def installation():
+    return render_template('installation.html')
+
 @app.route('/enumerate', methods=['GET','POST'])
 def forward():
     target = request.form.get('target')
@@ -52,6 +68,8 @@ def forward():
                 output = "oops error occured"
         else:
             output = "oops try putting an ip in first"
+    else:
+        output = "oops try putting an ip in first"
         
     return render_template('index.html', Enumerate_data=output);
 

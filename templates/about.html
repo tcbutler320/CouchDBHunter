@@ -24,7 +24,7 @@
     }
     .zoom:hover {
         color: #950101;
-        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        transform: scale(1.5); /* (150px% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
     }
     .footer {
         position:absolute;
@@ -60,7 +60,7 @@
 .form-style-4 label > span{
 	display: inline-block;
 	float: left;
-	width: 150px;
+	width: 150pxpx;
 }
 .form-style-4 input[type=text],
 .form-style-4 input[type=email] 
@@ -114,8 +114,10 @@ background: #394D61;
 <body>
    <div class="header" style="font-size: 1.25rem;">
     <a href="/">home /</a>
-    <a href="/about">about /</a>
-    <a href="/blog">demo </a>
+    <a href="/">about /</a>
+    <a href="/">blog /</a>
+    <a href="/">use cases /</a>
+    <a href="/">installation</a>
 
    </div>
     <div class="center">
@@ -133,30 +135,13 @@ background: #394D61;
                                                                             a couchdb enumeration tool
                                                                                        by Tyler Butler 
         </pre>
-        <form class="form-style-4" id="enumerate_form" action="/enumerate" method="post">
-            <label for="target">
-            <span>target</span><input type="text"  name="target" id="target" placeholder="ex: 178.128.130.13"/>
-            </label>
-            <label for="database">
-            <span>database</span><input  type="text" name="database" id="database" placeholder="ex: users"/>
-            </label>
-            <label for="document">
-            <span>document</span><input type="text" name="document" id="document" placeholder="ex: jhgaylor"/>
-            </label>
-            <label>
-            <span> </span>
-            <br>
-            <button onclick="document.getElementById('enumerate_form').submit();">go</button>
-            <button onclick="myFunction()">clear</button>
-            <button>log in</button>
-            </label>
-            </form>
-        <br>
-    </div>
-    <div class="center" style="margin-left: 200px;margin-right: 200px;font-size: 1rem;">
-        <p id="results">{{ Enumerate_data }}</p>
-        <p id="database_results">{{ database_data }}</p>
-    </div>
+        <div class="center" style="margin-left: 150px;margin-right: 150px;">
+            <p style="margin-left: 150px;margin-right: 150px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing. Justo donec enim diam vulputate ut. Tincidunt lobortis feugiat vivamus at augue eget arcu. Tincidunt eget nullam non nisi est sit amet facilisis magna. Sit amet justo donec enim diam vulputate ut pharetra sit. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. At risus viverra adipiscing at in tellus integer. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Ullamcorper malesuada proin libero nunc consequat interdum. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Diam maecenas ultricies mi eget mauris. Odio ut enim blandit volutpat maecenas volutpat. Quisque id diam vel quam elementum pulvinar etiam non quam. Id porta nibh venenatis cras sed felis eget.</p>
+            <p style="margin-left: 150px;margin-right: 150px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing. Justo donec enim diam vulputate ut. Tincidunt lobortis feugiat vivamus at augue eget arcu. Tincidunt eget nullam non nisi est sit amet facilisis magna. Sit amet justo donec enim diam vulputate ut pharetra sit. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. At risus viverra adipiscing at in tellus integer. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Ullamcorper malesuada proin libero nunc consequat interdum. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Diam maecenas ultricies mi eget mauris. Odio ut enim blandit volutpat maecenas volutpat. Quisque id diam vel quam elementum pulvinar etiam non quam. Id porta nibh venenatis cras sed felis eget.</p>
+            <p style="margin-left: 150px;margin-right: 150px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing. Justo donec enim diam vulputate ut. Tincidunt lobortis feugiat vivamus at augue eget arcu. Tincidunt eget nullam non nisi est sit amet facilisis magna. Sit amet justo donec enim diam vulputate ut pharetra sit. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. At risus viverra adipiscing at in tellus integer. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Ullamcorper malesuada proin libero nunc consequat interdum. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Diam maecenas ultricies mi eget mauris. Odio ut enim blandit volutpat maecenas volutpat. Quisque id diam vel quam elementum pulvinar etiam non quam. Id porta nibh venenatis cras sed felis eget.</p>
+            <p style="margin-left: 150px;margin-right: 150px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing. Justo donec enim diam vulputate ut. Tincidunt lobortis feugiat vivamus at augue eget arcu. Tincidunt eget nullam non nisi est sit amet facilisis magna. Sit amet justo donec enim diam vulputate ut pharetra sit. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. At risus viverra adipiscing at in tellus integer. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Ullamcorper malesuada proin libero nunc consequat interdum. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Diam maecenas ultricies mi eget mauris. Odio ut enim blandit volutpat maecenas volutpat. Quisque id diam vel quam elementum pulvinar etiam non quam. Id porta nibh venenatis cras sed felis eget.</p>
+
+        </div>
     <div class="center footer">
         <p>
             <a href="/" class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-code-branch"></i> git</a>
