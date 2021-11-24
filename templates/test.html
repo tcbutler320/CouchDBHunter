@@ -111,22 +111,9 @@ background: #394D61;
     text-align: center;
 }
 
- /* .outline {
-     border: 1px white dotted;
- } */
-
- .container {
-        display: flex;
-        justify-content: center;
-      }
-      
-      .item {
-        border: 1px yellow dotted;
-      }
 
 </style>
-<body onload="loadProfile();">
-
+<body>
     <div class="center" style="margin-top: 75px;">
         <pre class="outline">
             ▄████▄   ▒█████   █    ██  ▄████▄   ██░ ██ ▓█████▄  ▄▄▄▄       ██░ ██  █    ██  ███▄    █ ▄▄▄█████▓ ██▀███  
@@ -155,7 +142,7 @@ background: #394D61;
             <label>
             <span> </span>
             <br>
-            <button onclick="save();document.getElementById('enumerate_form').submit();">search</button>
+            <button onclick="document.getElementById('enumerate_form').submit();">go</button>
             <button onclick="myFunction()">clear</button>
             <button>log in</button>
             </label>
@@ -166,18 +153,14 @@ background: #394D61;
         <p id="results">{{ Enumerate_data }}</p>
         <p id="database_results">{{ database_data }}</p>
     </div>
-    <div class="center outline">
-        <p>history</p>
-        <p id="history"></p>
-    </div>
     <div class="center footer outline">
         <p>
             <a href="/" class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-code-branch"></i> git</a>
             <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-dumpster-fire"></i> changelog</a>
-            <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-clipboard-check"></i> blog</a>
-            <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-user-secret"></i> privacy</a>
+            <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-dumpster-fire"></i> blog</a>
+            <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-dumpster-fire"></i> privacy</a>
             <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-dumpster-fire"></i> about</a>
-            <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-donate"></i> donate</a>
+            <a href="/"  class="zoom" style="text-decoration: none;margin-right: 5px;"><i class="zoom fas fa-dumpster-fire"></i> donate</a>
         </p>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -249,18 +232,6 @@ background: #394D61;
         form.submit();
         }
 
-    </script>
-    <script>
-        function save(){
-            var target = document.getElementById('target').value;
-            sessionStorage.setItem('key', target);
-            document.getElementById('history').innerHTML = sessionStorage.getItem('key');
-        }
-    </script>
-    <script>
-        function loadProfile(){
-            document.getElementById('history').innerHTML = "11/23/2021:  " + sessionStorage.getItem('key');
-        }
     </script>
 </body>
 </html>
